@@ -1,4 +1,5 @@
 from test1 import operation_excel
+import time
 
 class test(operation_excel):
     def loading(self):
