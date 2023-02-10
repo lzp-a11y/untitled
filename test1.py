@@ -5,7 +5,7 @@ import xlrd
 class operation_excel():
     def __init__(self):
         self.workbook = openpyxl.load_workbook(r"E:\python学习\员工管理系统.xlsx")
-        self.sheet = self.workbook['Sheet1']
+        self.sheet = self.workbook['Sheet1']  #
         self.wb = xlrd.open_workbook(r"E:\python学习\员工管理系统.xlsx")  # 打开文件
         self.sheet2 = self.wb.sheet_by_index(0)  # 获取第一个表单的内容，索引从0开始
 

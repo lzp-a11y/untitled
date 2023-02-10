@@ -8,4 +8,4 @@ for i in range(0, len(employees_number)):
         name = info[j]['name']
         age = info[j]['age']
         wage = info[j]['wage']
-        print("工号", number,"姓名：", name, "年龄", age, "工资", wage)
+        print("工号", number,"姓名：", name, "年龄", age, "工资", wage) #
