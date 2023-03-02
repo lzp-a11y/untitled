@@ -20,10 +20,6 @@ for i in range(1, len(num_x_list)):
     iter = itertools.combinations(num_x_list, i)    # 对列表num_x_list里面的数据进行组合，看看有几种组合部分
     group_item = list(iter)                         # 将所有组合结果数值变成列表
     for j in range(1, len(group_item)):             # 遍历所有可能性的组合，然后求和
-#         print(group_item[j], "之和等于", sum(group_item[j]))
-#         if sum(group_item[j]) == value2:
-#             result.append(group_item[x])
-# print('有', len(result), '种加法组合,得出', value2, '的组合是:')
         if sum(group_item[j]) in range(value2-5, value2+1):
             result.append(group_item[j])
 print('有', len(result), '种加法组合,接近', value2, '的组合是:')
