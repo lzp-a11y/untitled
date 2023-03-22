@@ -14,7 +14,6 @@ def coushu(filename1, filename2, data1, data2, sheet_name1, to_sheet_name1, to_s
     df1['凑值'] = None
     df1.iloc[0, 5] = '{}'.format(data1)
     df1.iloc[1, 5] = '{}'.format(data2)
-    print(df1)
     num_x_list = []
     for i in range(1, len(df1)):
         value1 = df1.iloc[i, 4]  # 取出第一列的数值
@@ -38,13 +37,11 @@ def coushu(filename1, filename2, data1, data2, sheet_name1, to_sheet_name1, to_s
         # 计算组合内数值之和
         list1 = list(result[i])            # list1为符合第一个数值的数字组合。
         list2 = list(set(num_x_list) - set(list1))    # list2为扣掉符合第一个数值组合后的数字，因为一个数字只能用一次
-        print(list1)
-        print(list2)
         for i2 in range(0, len(list2)):
             iter2 = itertools.combinations(list2, i2)         # 对列表list2里面的数据进行组合，看看有几种组合部分
             group_item2 = list(iter2)                        # 将组合结果数值变成列表
             for j2 in range(0, len(group_item2)):             # 遍历所有可能性的组合，然后求和
-                if sum(group_item2[j2]) in range(value3-5, value3+1):
+                if sum(group_item2[j2]) in range(value3-20, value3+1):
                     result2.append(group_item2[j2])
         print('有', len(result2), '种加法组合,接近', value3, '的组合是:')
         for i3 in range(len(result2)):
@@ -71,5 +68,5 @@ def coushu(filename1, filename2, data1, data2, sheet_name1, to_sheet_name1, to_s
 filename1: 取值的文件名    filename2: 要保存的结果文件     data1: 要凑值的数据1（产互） data2: 要凑值的数据2（主业）
 sheet_name1：取值文件的sheet名     to_sheet_name1：保存结果文件的sheet名（产互）  to_sheet_name2：保存结果文件的sheet名（主业）
 """
-coushu(filename1="2023年1月农品优农采购明细表7", filename2='验证测试结果2',
-       data1=1864, data2=16627, sheet_name1='肉类', to_sheet_name1='肉类产互', to_sheet_name2='肉类主业')
+coushu(filename1="2023年2月农品优农采购明细表7", filename2='海鲜2',
+       data1=1470, data2=6433, sheet_name1='海鲜等日常采购', to_sheet_name1='肉类产互', to_sheet_name2='肉类主业')
