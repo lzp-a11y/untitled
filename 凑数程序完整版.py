@@ -6,6 +6,7 @@ import openpyxl
 import os
 from datetime import datetime
 
+
 def coushu(filename1, filename2, data1, data2, sheet_name1, to_sheet_name1, to_sheet_name2):
     root_dir = os.path.dirname(__file__)                 # 获取当前项目所在目录地址
     excl1 = os.path.join(root_dir, "{}.xlsx".format(filename1))        # 拼接excel表格地址
@@ -68,5 +69,6 @@ def coushu(filename1, filename2, data1, data2, sheet_name1, to_sheet_name1, to_s
 filename1: 取值的文件名    filename2: 要保存的结果文件     data1: 要凑值的数据1（产互） data2: 要凑值的数据2（主业）
 sheet_name1：取值文件的sheet名     to_sheet_name1：保存结果文件的sheet名（产互）  to_sheet_name2：保存结果文件的sheet名（主业）
 """
-coushu(filename1="2023年2月农品优农采购明细表7", filename2='海鲜2',
-       data1=1470, data2=6433, sheet_name1='海鲜等日常采购', to_sheet_name1='肉类产互', to_sheet_name2='肉类主业')
+coushu(filename1="2023年2月农品优农采购明细表7", filename2='肉类',
+       data1=3292, data2=10000, sheet_name1='蔬菜、肉等日常采购', to_sheet_name1='肉类产互', to_sheet_name2='肉类主业')
+
